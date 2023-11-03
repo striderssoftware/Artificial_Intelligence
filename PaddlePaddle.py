@@ -1,6 +1,3 @@
-
-#from paddle.fluid.dygraph.learning_rate_scheduler import np
-
 !pip install paddlepaddle
 
 import paddle as pad
