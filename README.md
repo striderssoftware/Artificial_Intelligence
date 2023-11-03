@@ -2,7 +2,10 @@
 
 My playground to learn about Artificial Intelligence.
 current interest:
-Python
-Python Torch
-Python TensorFlow
-Dataset -  creation, acusition, labeling, structure
+Python Torch,
+Python TensorFlow,
+Keras
+PaddlePaddle
+Caffe
+MXNet
+Dataset -  creation, acquisition, labeling, structure
