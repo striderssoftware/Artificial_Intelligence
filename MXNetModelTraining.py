@@ -50,7 +50,7 @@ train_data = gluon.data.DataLoader(
 
 for data, label in train_data:
         print(data.shape, label.shape)
-            break
+        break
 
 mnist_valid = gluon.data.vision.FashionMNIST(train=False)
 valid_data = gluon.data.DataLoader(
@@ -91,7 +91,7 @@ def acc(output, label):
 
 
 
-for epoch in range(10):
+for epoch in range(2):
     train_loss, train_acc, valid_acc = 0., 0., 0.
     tic = time.time()
     for data, label in train_data:
