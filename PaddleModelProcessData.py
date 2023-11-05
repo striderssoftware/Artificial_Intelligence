@@ -15,7 +15,7 @@ net = nn.Sequential(
     nn.Tanh(),
     nn.Linear(200, 10))
 
-model = paddle.Model(netl)
+model = paddle.Model(net)
 optim = paddle.optimizer.SGD(learning_rate=1e-3,
     parameters=model.parameters())
 
