@@ -31,11 +31,6 @@ transform = T.Compose([
 data = paddle.vision.datasets.MNIST(mode='train', transform=transform)
 model.fit(data, epochs=2, batch_size=32, verbose=1)
 
-testData = paddle.vision.datasets.MNIST(mode='test', transform=transform)
-testArray = np.array(testData[0][0])
-output = model.predict_batch([testArray])
-
-
 print ("strider was here:ENDEE")
 
 
