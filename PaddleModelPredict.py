@@ -58,12 +58,9 @@ class_names = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'E
 for i, logits in enumerate(output[0][0]):  # probResults, predResults
     print (logits)
 
-
 plt.figure()
 plt.imshow(image)
 plt.grid(False)
 plt.show()
-
-
 
 print ("strider was here:ENDEE")
