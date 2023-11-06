@@ -43,19 +43,15 @@ testData = paddle.vision.datasets.MNIST(mode='test', transform=transform)
 testArray = np.array(testData[index][0])
 output = model.predict_batch([testArray])
 
-transform2 = transforms.Compose([transforms.Resize((128, 128)), transforms.ToTensor()])
 testData2 = paddle.vision.datasets.MNIST(mode='test')
 
 image, label = testData2[index]
-
-#predResult = probability_model.predict(x_test)           # Model Confidence of Class Membership
 
 print ('\n\n')
 
 #  Results: Map results into solution space
 class_names = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
-#class_names = [23,45,65,765,678,87,65,55,44,64,35]
-for i, logits in enumerate(output[0][0]):  # probResults, predResults
+for i, logits in enumerate(output[0][0]):
     print (logits)
 
 plt.figure()
