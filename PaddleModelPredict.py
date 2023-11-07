@@ -50,13 +50,18 @@ image, label = testData2[index]
 print ('\n\n')
 
 #  Results: Map results into solution space
-class_names = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+max =0
+winner = 0
 for i, logits in enumerate(output[0][0]):
-    print (logits)
+    if max < logits:
+        max = logits
+        winner = i
+    #print (logits)
 
 plt.figure()
 plt.imshow(image)
 plt.grid(False)
+plt.title(winner)
 plt.show()
 
 print ("strider was here:ENDEE")
