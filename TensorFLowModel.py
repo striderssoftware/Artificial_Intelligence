@@ -63,5 +63,5 @@ for i, logits in enumerate(predResult):  # probResults, predResults
     plt.grid(False)
     plt.show()
 
-    print ("all doneeeeeee")
+print ("all doneeeeeee")
 
