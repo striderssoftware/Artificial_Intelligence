@@ -3,6 +3,7 @@ import tensorflow as tf
 import keras
 from keras import layers
 import matplotlib.pyplot as plt
+from keras.utils import plot_model
 
 print ("strider was here")
 
@@ -33,6 +34,8 @@ decoder.summary()
 #  Create a (autoencoder) model using some of the layers
 autoencoder = keras.Model(encoder_input, decoder_output, name="autoencoder")
 autoencoder.summary()
+
+plot_model(autoencoder, show_shapes=True, show_layer_names=True, to_file='model.png')
 
 print ("ENDEEEeee")
 
