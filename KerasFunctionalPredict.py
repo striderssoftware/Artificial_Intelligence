@@ -67,8 +67,8 @@ model.fit(x_train[:1000], y_train[:1000], batch_size=64, epochs=1, validation_sp
 
 # Predict
 output = model.predict(x_test[:1])
-print (output)
-output = model(x_test[:1])
+#print (output)
+output = block1Model(x_test[:1])
 print (output)
 
 print ("strider was here: ENDEEeeeee")
