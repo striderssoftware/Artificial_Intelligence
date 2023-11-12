@@ -1,6 +1,7 @@
 import keras
 from keras import layers
 from keras.utils import plot_model
+import tensorflow as tf
 
 print ("strider was here")
 
@@ -34,6 +35,8 @@ block2Model = keras.Model(block_1_output, block_2_output, name="toy_resnetb2")
 
 block3Model = keras.Model(block_2_output, block_3_output, name="toy_resnetb3")
 
+block4Model = keras.Model(block_3_output, outputs, name="toy_resnetb3")
+
 # Train
 (x_train, y_train), (x_test, y_test) = keras.datasets.cifar10.load_data()
 
@@ -57,6 +60,24 @@ block1Model.compile(
         metrics=["acc"],
     )
 
+block2Model.compile(
+            optimizer=keras.optimizers.RMSprop(1e-3),
+            loss=keras.losses.CategoricalCrossentropy(from_logits=True),
+            metrics=["acc"],
+        )
+
+block3Model.compile(
+            optimizer=keras.optimizers.RMSprop(1e-3),
+            loss=keras.losses.CategoricalCrossentropy(from_logits=True),
+            metrics=["acc"],
+        )
+
+block4Model.compile(
+            optimizer=keras.optimizers.RMSprop(1e-3),
+            loss=keras.losses.CategoricalCrossentropy(from_logits=True),
+            metrics=["acc"],
+        )
+
 
 # Call fit on some of the Models Note: no training data for some
 model.fit(x_train[:1000], y_train[:1000], batch_size=64, epochs=1, validation_split=0.2)
@@ -66,13 +87,19 @@ model.fit(x_train[:1000], y_train[:1000], batch_size=64, epochs=1, validation_sp
 #block1Model.fit(x_train[:1000], y_train[:1000], batch_size=64, epochs=1, validation_split=0.2)
 
 # Predict
-output = model.predict(x_test[:1])
-#print (output)
+modelOutput = model.predict(x_test[:1])
+
 output = block1Model(x_test[:1])
-print (output)
+output = block2Model(output)
+output = block3Model(output)
+output = block4Model(output)
+
+areEqual = tf.math.equal(modelOutput, output)
+print (areEqual)
+ 
 
 print ("strider was here: ENDEEeeeee")
 
-plot_model(block1Model, show_shapes=True, show_layer_names=True, to_file='model.png')
+#plot_model(block1Model, show_shapes=True, show_layer_names=True, to_file='model.png')
 
 
