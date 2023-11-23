@@ -1,3 +1,5 @@
+#!pip install keras
+
 import keras
 from keras import layers
 from keras.utils import plot_model
@@ -32,7 +34,7 @@ department_pred = layers.Dense(num_departments, name="department")(x)
 model = keras.Model(
     inputs=[title_input_tensor, body_input_tensor, tags_input_tensor],
     outputs=[priority_pred, department_pred],
-}
+)
 
 print ("strider was here: ENDEEeeeee")
 
