@@ -47,9 +47,10 @@ normalize = layers.Normalization()
 normalize.adapt(abalone_features)
 
 norm_abalone_model = tf.keras.Sequential([
-      layers.Input(shape=(n_features,))
+      layers.Input(shape=(n_features,)),
       normalize,
-      layers.Dense(64),
+      layers.Dense(256),
+      layers.Dense(128),
       layers.Dense(1)
     ])
 
