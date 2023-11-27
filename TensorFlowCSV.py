@@ -9,11 +9,11 @@ print ("strider was here:START")
 
 np.set_printoptions(precision=3, suppress=True)
 
-#  Load data into a pandas DataFrame
+#  Load data into a pandas DataFrame  NOTE: changed Age feature to AnyKey
 abalone_train = pd.read_csv(
 "https://storage.googleapis.com/download.tensorflow.org/data/abalone_train.csv",
 names=["Length", "Diameter", "Height", "Whole weight", "Shucked weight",
-"Viscera weight", "Shell weight", "AnyKey"])
+"Viscera weight", "Shell weight", "AnyKey"])  
 
 abalone_train.head()
 
@@ -21,11 +21,16 @@ abalone_train.head()
 abalone_features = abalone_train.copy()
 abalone_labels = abalone_features.pop('AnyKey')
 
+abalone_features.head()
+
 abalone_features = np.array(abalone_features)
-print (abalone_features )
+
+n_features = abalone_features.shape[1]
 
 abalone_model = tf.keras.Sequential([
-    layers.Dense(64),
+    layers.Input(shape=(n_features,))
+    layers.Dense(256),
+    layers.Dense(128),
     layers.Dense(1)
     ])
 
@@ -42,6 +47,7 @@ normalize = layers.Normalization()
 normalize.adapt(abalone_features)
 
 norm_abalone_model = tf.keras.Sequential([
+      layers.Input(shape=(n_features,))
       normalize,
       layers.Dense(64),
       layers.Dense(1)
