@@ -11,6 +11,9 @@ print("Strider was here:", tf.__version__)
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
+n_features = x_train.shape[1]
+print (n_features)
+
 #  Building Mechanism NOT an Algorithm
 model = tf.keras.models.Sequential([
       tf.keras.layers.Flatten(input_shape=(28, 28)),   # The input, in the case the image
