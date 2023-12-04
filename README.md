@@ -11,7 +11,7 @@ PaddlePaddle: (??API) https://www.paddlepaddle.org.cn/documentation/docs/en/api/
 Caffe: This may be a legacy API for machine learning  
 MXNet: Apache API. this project has been retired: https://mxnet.apache.org/versions/1.9.1/api/python/docs/api/gluon/index.html  
   
-DATATSET:  
+DATASET:  
 creation, acquisition, labeling, structure  
 
     
