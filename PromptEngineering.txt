@@ -3,16 +3,13 @@ Notes From Taking the AWS Skill Builder:
 Foundations of Prompt Engineering
 https://explore.skillbuilder.aws/learn/course/17763/play/93257/foundations-of-prompt-engineering
 
-
-
 FM - Foundation Models
 LM - Language Models
-
 
 FMs include LLM's, Amazon Titan, Meta Llama 2, Anthropic Claude, AI21 Labs Jurassic-2 Ultra,
 
 
-Self-supervised learning
+Self-supervised learning:
 
 Once a Model is trained (pre-trained) on Data un-supervised, it can
 undergo
@@ -22,11 +19,9 @@ Instruction fine tuning:
 the model is shown examples of correct or desireed outcomes.
 this may include Prompt tuning and RLHF or Real Life Human Feedback.
 
-Prompt-Enginerring:
+Prompt-Engineering:
 Like Fine-Tuning but without labeld data. The model is instructed
 through the prompts.
-
-
 
 
 Elements of a prompt:
@@ -44,10 +39,7 @@ Output Indicator:
 Two sentance email
 
 
-
-
 Best Practice:
-
 
 State the goal:
 who, what where, why, how,
@@ -67,16 +59,10 @@ Breakup Tasks:
 From this data remove all negative values
 Take that response and find the averge
 
-
-
-
 Prompt Types:
 
 Zero-shot prompting:
 Little or no context or preperation
-
-
-
 
 CoT Prompting
 Chain Of Thought
@@ -96,8 +82,6 @@ Answer:   Based on the Data provided the trend seems to be downward at
 
 Question: Explaining the steps Estimate the proceeds for the Feb, and March following Jan?
 -----------------------------------------------------------------------------------
-
-
 
 Advanced Prompt Techniques:
 
