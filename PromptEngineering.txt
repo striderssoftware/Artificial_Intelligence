@@ -1,0 +1,118 @@
+
+Notes From Taking the AWS Skill Builder:
+Foundations of Prompt Engineering
+https://explore.skillbuilder.aws/learn/course/17763/play/93257/foundations-of-prompt-engineering
+
+
+
+FM - Foundation Models
+LM - Language Models
+
+
+FMs include LLM's, Amazon Titan, Meta Llama 2, Anthropic Claude, AI21 Labs Jurassic-2 Ultra,
+
+
+Self-supervised learning
+
+Once a Model is trained (pre-trained) on Data un-supervised, it can
+undergo
+
+Fine-Tuning:
+Instruction fine tuning:
+the model is shown examples of correct or desireed outcomes.
+this may include Prompt tuning and RLHF or Real Life Human Feedback.
+
+Prompt-Enginerring:
+Like Fine-Tuning but without labeld data. The model is instructed
+through the prompts.
+
+
+
+
+Elements of a prompt:
+
+Instruction:
+Write an email describing this memo in two sentances.
+
+Context:
+Scope: inter office, multiple groups
+
+Input Data:
+The Memo
+
+Output Indicator:
+Two sentance email
+
+
+
+
+Best Practice:
+
+
+State the goal:
+who, what where, why, how,
+
+Describe the Output:
+State Format or give Examples, provide default response. (avoid Hallucinations)
+Explictly state the solution space:
+a) I dont know
+b) Before the year 2000
+c) After the year 2000
+
+Provide Context:
+In Music, what is a scale?
+
+
+Breakup Tasks:
+From this data remove all negative values
+Take that response and find the averge
+
+
+
+
+Prompt Types:
+
+Zero-shot prompting:
+Little or no context or preperation
+
+
+
+
+CoT Prompting
+Chain Of Thought
+
+(Provide Context through an Example Question and Answer)
+
+------------ take all this paste it into ChatGBT ---------------------------------
+The Spotify proceeds were this
+
+Sept  = $500
+Nov   = $400
+Dec   = $300
+
+Question: Esitmate the Spotify proceeds for Jan
+Answer:   Based on the Data provided the trend seems to be downward at
+	  $100 a month. If that trend proceeds Jan proceeds will be $200
+
+Question: Explaining the steps Estimate the proceeds for the Feb, and March following Jan?
+-----------------------------------------------------------------------------------
+
+
+
+Advanced Prompt Techniques:
+
+Self-Consistency: Demonstrate the Logical method you want used to solve the question.
+                  this seems related to the Spotify example above.
+
+RAG
+Retrieval Augmented Generation (getting real time Data ?? )
+
+
+Both ART and ReAct seem to be enabling the LLM to use predefined external tools
+ART
+Automatic Reasoning and Tool-use
+
+
+ReAct
+Resoning and Action
+This seems to be when an LLM LM can access API's (Calculator, SQL data base)
