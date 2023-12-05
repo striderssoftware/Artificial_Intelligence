@@ -1,16 +1,15 @@
 
-Notes From Taking the AWS Skill Builder:
-Foundations of Prompt Engineering
-https://explore.skillbuilder.aws/learn/course/17763/play/93257/foundations-of-prompt-engineering
-
+-----Notes From Taking the AWS Skill Builder----------------------
+-----Foundations of Prompt Engineering----------------------------
+-----https://explore.skillbuilder.aws/learn/course/17763/play/93257/foundations-of-prompt-engineering
 FM - Foundation Models
 LM - Language Models
 
 FMs include LLM's, Amazon Titan, Meta Llama 2, Anthropic Claude, AI21 Labs Jurassic-2 Ultra,
-
+------------------
 
 Self-supervised learning:
-
+------------------------
 Once a Model is trained (pre-trained) on Data un-supervised, it can
 undergo
 
@@ -24,8 +23,7 @@ Like Fine-Tuning but without labeld data. The model is instructed
 through the prompts.
 
 
-Elements of a prompt:
-
+-------------------Example Prompt w/labled Elements-------------------
 Instruction:
 Write an email describing this memo in two sentances.
 
@@ -37,9 +35,10 @@ The Memo
 
 Output Indicator:
 Two sentance email
-
+----------------------------------------------------------------------
 
 Best Practice:
+-------------
 
 State the goal:
 who, what where, why, how,
@@ -59,8 +58,9 @@ Breakup Tasks:
 From this data remove all negative values
 Take that response and find the averge
 
-Prompt Types:
 
+Prompt Types:
+------------
 Zero-shot prompting:
 Little or no context or preperation
 
@@ -84,7 +84,7 @@ Question: Explaining the steps Estimate the proceeds for the Feb, and March foll
 -----------------------------------------------------------------------------------
 
 Advanced Prompt Techniques:
-
+--------------------------
 Self-Consistency: Demonstrate the Logical method you want used to solve the question.
                   this seems related to the Spotify example above.
 
@@ -100,3 +100,4 @@ Automatic Reasoning and Tool-use
 ReAct
 Resoning and Action
 This seems to be when an LLM LM can access API's (Calculator, SQL data base)
+
