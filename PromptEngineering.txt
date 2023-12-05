@@ -69,7 +69,7 @@ Chain Of Thought
 
 (Provide Context through an Example Question and Answer)
 
------------- take all this paste it into ChatGBT ---------------------------------
+------------ take all this paste it into ChatGPT ---------------------------------
 The Spotify proceeds were this
 
 Sept  = $500
