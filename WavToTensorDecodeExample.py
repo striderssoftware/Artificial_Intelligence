@@ -17,4 +17,6 @@ file_contents = tf.io.read_file(data_dir)
 contents, sample_rate = tf.audio.decode_wav(file_contents, desired_channels=2)  #1= mono 2 = stereo
 
 print (contents)
+print (sample_rate)
+
 
