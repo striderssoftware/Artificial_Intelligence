@@ -16,4 +16,7 @@ creation, acquisition, labeling, structure
 
 PROMPT ENGINEERING:  
 PromptEngineering.txt - Notes from an AWS Prompt Engineering course  
+Git Resource:  
+https://github.com/dair-ai/Prompt-Engineering-Guide/tree/main/guides  
+
 
