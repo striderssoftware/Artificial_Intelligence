@@ -71,22 +71,7 @@ def get_spectrogram(waveform):
     # shape (`batch_size`, `height`, `width`, `channels`).
     spectrogram = spectrogram[..., tf.newaxis]
     return spectrogram
-
-
-# here is a WTF: These vars are used later after this display loop
-# (side effect) straight from the example, hmmmm 
-for i in range(3):
-    label = label_names[example_labels[i]]
-    waveform = example_audio[i]
-    spectrogram = get_spectrogram(waveform)
-
-    #print('Label:', label)
-    #print('Waveform shape:', waveform.shape)
-    #print('Spectrogram shape:', spectrogram.shape)
-    #print('Audio playback')
-    #display.display(display.Audio(waveform, rate=16000))
-
-
+    
 def make_spec_ds(ds):
     return ds.map(
         map_func=lambda audio,label: (get_spectrogram(audio), label),
