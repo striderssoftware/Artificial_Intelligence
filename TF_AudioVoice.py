@@ -33,6 +33,10 @@ commands = np.array(tf.io.gfile.listdir(str(data_dir)))
 commands = commands[(commands != 'README.md') & (commands != '.DS_Store')]
 print('Commands:', commands)
 
+# WAV Files To Tensors
+# The directory data_dir (data/mini_speech_commands) is a dir of dir of .wav files
+#     ?? what are the constraints around these wav files , .i.e length etc...
+#     ?? It would be interesting to see wav files converted to tensors directly 
 train_ds, val_ds = tf.keras.utils.audio_dataset_from_directory(
     directory=data_dir,
     batch_size=64,
