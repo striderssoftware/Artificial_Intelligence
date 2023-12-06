@@ -3,35 +3,39 @@ import matplotlib.pyplot as plt
 
 print("Strider was here:", tf.__version__)
 
-# The TRAINING DATA - This defines the problem and the solution space
-# From a business view -  An Entire New Industry of Acquisition,
-# Labeling, and Structure of this training data
-
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
 n_features = x_train.shape[1]
 print (n_features)
 
-#  Building Mechanism NOT an Algorithm
 model = tf.keras.models.Sequential([
       tf.keras.layers.Flatten(input_shape=(28, 28)),   # The input, in the case the image
       tf.keras.layers.Dense(128, activation='relu'),   # hidden
       tf.keras.layers.Dropout(.2),                     # hidden
       tf.keras.layers.Dense(10)                        # The output layer, the solution space
     ])
-# The hidden layers are the structure that ALLOWS the
-# algorithm to work.  The algorithm is "written" into the weights
-# using backpropagation and cost functions
 
-#  Training
 loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-
 model.compile(optimizer='adam',
                             loss=loss_fn,
                             metrics=['accuracy'])
 model.fit(x_train, y_train, epochs=1)  #epochs=25
 
+#  SAVING
+# This will give you a .keras zip file that containes
+# A Keras model consisting of multiple components:
+
+# The architecture, or configuration, which specifies what layers the model contain, and how they're connected.
+# A set of weights values (the "state of the model").
+# An optimizer (defined by compiling the model).
+# A set of losses and metrics (defined by compiling the model).
+# The Keras API saves all of these pieces together in a unified format, marked by the .keras extension. This is a zip archive consisting of the following:
+
+   # A JSON-based configuration file (config.json): Records of model, layer, and other trackables' configuration.
+   # A H5-based state file, such as model.weights.h5 (for the whole model), with directory keys for layers and their weights.
+   # A metadata file in JSON, storing things such as the current Keras version.
+      
 print ("saving")
 
 model.save("stridersMod.keras")
