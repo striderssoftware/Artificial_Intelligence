@@ -14,6 +14,6 @@ MXNet: Apache API. this project has been retired: https://mxnet.apache.org/versi
 DATASET:  
 creation, acquisition, labeling, structure  
 
-PROPT ENGINEERING:  
+PROMPT ENGINEERING:  
 PromptEngineering.txt - Notes from an AWS Prompt Engineering course  
 
