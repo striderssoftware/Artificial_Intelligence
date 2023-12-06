@@ -1,7 +1,7 @@
 
 channels = 2  # 1 = mono 2 = stereo
 length = 200
-wavTensor = tf.zeros(shape=[channels,length], dtype="float32")
+wavTensor = tf.zeros(shape=[length,channels], dtype="float32")
 sampleRateTensor = 44.1
 
 wavString = tf.audio.encode_wav(wavTensor, sampleRateTensor)
