@@ -23,6 +23,9 @@ model.compile(optimizer='adam',
 model.fit(x_train, y_train, epochs=1)  #epochs=25
 
 #  SAVING
+#  Once one net/model has "learned" something that knowledge can be utilized by all net/models of a particular type
+#  To Quote Neo,   "I know Kung Foo" 
+#
 # This will give you a .keras zip file that containes
 # A Keras model consisting of multiple components:
 
