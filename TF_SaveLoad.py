@@ -40,10 +40,24 @@ model.fit(x_train, y_train, epochs=1)  #epochs=25
    # A metadata file in JSON, storing things such as the current Keras version.
       
 print ("saving")
-
 model.save("stridersMod.keras")
 
 reconstructed_model = tf.keras.models.load_model("stridersMod.keras")
-reconstructed_model.fit(x_train, y_train, epochs=1)
 
-print ("endeeeee")
+probability_model = tf.keras.Sequential([
+      model,
+      tf.keras.layers.Softmax()
+    ])
+
+rec_probability_model = tf.keras.Sequential([
+      reconstructed_model,
+      tf.keras.layers.Softmax()
+    ])
+
+predResult = probability_model.predict(x_test)
+rec_predResult = rec_probability_model.predict(x_test)
+
+areEqual = tf.math.equal(predResult, rec_predResult)
+print (areEqual)
+
+print ("edndeeeeeeeee")
