@@ -4,7 +4,7 @@ My playground to learn about Artificial Intelligence.
 current interest:  
   
 API:  
-PyTorch: META API.  
+PyTorch: META: https://pytorch.org/docs/stable/index.html  
 TensorFlow (TF): https://www.tensorflow.org/tutorials  
 Keras: Part of the TF API.  https://www.tensorflow.org/guide/keras   
 PaddlePaddle: (??API) https://www.paddlepaddle.org.cn/  
