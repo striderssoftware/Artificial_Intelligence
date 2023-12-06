@@ -14,7 +14,7 @@ data_dir = 'data/mini_speech_commands/yes/004ae714_nohash_0.wav'
 
 print (data_dir)
 file_contents = tf.io.read_file(data_dir)
-contents, sample_rate = tf.audio.decode_wav(file_contents, desired_channels=1)
+contents, sample_rate = tf.audio.decode_wav(file_contents, desired_channels=2)  #1= mono 2 = stereo
 
 print (contents)
 
