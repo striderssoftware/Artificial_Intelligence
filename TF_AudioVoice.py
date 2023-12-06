@@ -163,7 +163,7 @@ plt.xlabel('Prediction')
 plt.ylabel('Label')
 plt.show()
 
-
+# Verify the model's prediction output using an input audio file 
 x = data_dir/'no/01bb6a2a_nohash_0.wav'
 x = tf.io.read_file(str(x))
 x, sample_rate = tf.audio.decode_wav(x, desired_channels=1, desired_samples=16000,)
