@@ -11,7 +11,7 @@ from torch import nn
 print ("strider was here")
 
 # Define some functions
-def accuracy_fn(y_true, y_pred):
+def accuracy_fn(y_true, y_pred): 
     correct = torch.eq(y_true, y_pred).sum().item()
     acc = (correct / len(y_pred)) * 100
     return acc
@@ -80,40 +80,17 @@ class MNISTModelV0(nn.Module):
 # Get Dataset
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-train_data = datasets.MNIST(
-    root="data",
-    train=True,
-    download=True,
-    transform=ToTensor()
-)
-
-test_data = datasets.MNIST(
-    root="data",
-    train=False,
-    download=True,
-    transform=ToTensor()
-)
-
+train_data = datasets.MNIST(root="data", train=True, download=True, transform=ToTensor())
+test_data = datasets.MNIST(root="data", train=False, download=True, transform=ToTensor())
 class_names = train_data.classes
 
 BATCH_SIZE = 8
-train_dataloader = DataLoader(train_data,
-    batch_size=BATCH_SIZE,
-    shuffle=True
-)
-
-test_dataloader = DataLoader(test_data,
-    batch_size=BATCH_SIZE,
-    shuffle=False
-)
-
+train_dataloader = DataLoader(train_data, batch_size=BATCH_SIZE, shuffle=True)
+test_dataloader = DataLoader(test_data, batch_size=BATCH_SIZE, shuffle=False)
 train_features_batch, train_labels_batch = next(iter(train_dataloader))
 
 # Model Creation - see Model Definition
-model_0 = MNISTModelV0(input_shape=784,
-    hidden_units=10,
-    output_shape=len(class_names)
-)
+model_0 = MNISTModelV0(input_shape=784, hidden_units=10, output_shape=len(class_names))
 
 model_0.to(device)
 loss_fn = nn.CrossEntropyLoss()
@@ -124,17 +101,8 @@ train_time_start_on_gpu = timer()
 epochs = 3
 for epoch in tqdm(range(epochs)):
     print(f"Epoch: {epoch}\n---------")
-    train_step(data_loader=train_dataloader,
-        model=model_0,
-        loss_fn=loss_fn,
-        optimizer=optimizer,
-        accuracy_fn=accuracy_fn
-    )
-    test_step(data_loader=test_dataloader,
-        model=model_0,
-        loss_fn=loss_fn,
-        accuracy_fn=accuracy_fn
-    )
+    train_step(data_loader=train_dataloader, model=model_0, loss_fn=loss_fn, optimizer=optimizer, accuracy_fn=accuracy_fn)
+    test_step(data_loader=test_dataloader, model=model_0, loss_fn=loss_fn, accuracy_fn=accuracy_fn)
 
 train_time_end_on_gpu = timer()
 total_train_time_model_1 = print_train_time(start=train_time_start_on_gpu, end=train_time_end_on_gpu, device=device)
