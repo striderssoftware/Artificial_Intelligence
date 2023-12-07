@@ -11,6 +11,7 @@ print ("strider was here")
 
 waveform_tensor = torch.tensor((), dtype=torch.float32)
 waveform_tensor = waveform_tensor.new_zeros(1, 16000)
+sample_rate = 16000
 
 buffer = io.BytesIO()
 
