@@ -107,4 +107,28 @@ for epoch in tqdm(range(epochs)):
 train_time_end_on_gpu = timer()
 total_train_time_model_1 = print_train_time(start=train_time_start_on_gpu, end=train_time_end_on_gpu, device=device)
 
+# Perform a Test of some of the test data
+count = 0
+for image, label in test_data:
+  if count > 20:
+    break
+
+  y_pred = model_0(image)
+
+  count = count + 1
+  max = 0
+  winner = 0
+  for i, logits in enumerate(y_pred[0]):
+     if max < logits:
+          max = logits
+          winner = i
+
+  print ('\n\n')
+  print("WOO WOO the winner is:")    
+  print (winner)
+
+  plt.imshow(image.squeeze(), cmap="gray") # image shape is [1, 28, 28] (colour channels, height, width)
+  plt.title(class_names[label]);
+  plt.show()
+
 print ("Endeeeeeee")
