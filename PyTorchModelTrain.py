@@ -108,12 +108,10 @@ train_time_end_on_gpu = timer()
 total_train_time_model_1 = print_train_time(start=train_time_start_on_gpu, end=train_time_end_on_gpu, device=device)
 
 # Perform a Test of some of the test data
-count = 0
-for image, label in test_data:
-  if count > 20:
+for index, [image, label] in enumerate(test_data):
+  if index > 20:
     break
-  count = count + 1
-  
+      
   y_pred = model_0(image)
 
   print ('\n\n')
