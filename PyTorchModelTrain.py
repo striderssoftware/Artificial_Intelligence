@@ -29,22 +29,16 @@ def train_step(model: torch.nn.Module,
                device: torch.device = device):
     train_loss, train_acc = 0, 0
     for batch, (X, y) in enumerate(data_loader):
-        # Send data to GPU
         X, y = X.to(device), y.to(device)
-
-        # 1. Forward pass
         y_pred = model(X)
-        # 2. Calculate loss
         loss = loss_fn(y_pred, y)
         train_loss += loss
-        train_acc += accuracy_fn(y_true=y, y_pred=y_pred.argmax(dim=1)) # Go from logits -> pred labels
+        train_acc += accuracy_fn(y_true=y, y_pred=y_pred.argmax(dim=1))
 
-        # 3. Backward and Optimize
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
-    # Calculate loss and accuracy per epoch and print out what's happening
     train_loss /= len(data_loader)
     train_acc /= len(data_loader)
     print(f"Train loss: {train_loss:.5f} | Train accuracy: {train_acc:.2f}%")
@@ -75,8 +69,8 @@ class MNISTModelV0(nn.Module):
     def __init__(self, input_shape: int, hidden_units: int, output_shape: int):
         super().__init__()
         self.layer_stack = nn.Sequential(
-            nn.Flatten(), # neural networks like their inputs in vector form
-            nn.Linear(in_features=input_shape, out_features=hidden_units), # in_features = number of features in a data sample (784 pixels)
+            nn.Flatten(),
+            nn.Linear(in_features=input_shape, out_features=hidden_units),
             nn.Linear(in_features=hidden_units, out_features=output_shape)
         )
 
@@ -115,14 +109,14 @@ test_dataloader = DataLoader(test_data,
 
 train_features_batch, train_labels_batch = next(iter(train_dataloader))
 
-# Model Creation  see Model Definition
-model_0 = MNISTModelV0(input_shape=784, # one for every pixel (28x28)
-    hidden_units=10, # how many units in the hiden layer
-    output_shape=len(class_names) # one for every class
+# Model Creation - see Model Definition
+model_0 = MNISTModelV0(input_shape=784,
+    hidden_units=10,
+    output_shape=len(class_names)
 )
 
 model_0.to(device)
-loss_fn = nn.CrossEntropyLoss() # this is also called "criterion"/"cost function" in some places
+loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(params=model_0.parameters(), lr=0.1)
 
 torch.manual_seed(42)
