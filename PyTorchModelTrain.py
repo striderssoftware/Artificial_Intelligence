@@ -112,20 +112,14 @@ count = 0
 for image, label in test_data:
   if count > 20:
     break
-
+  count = count + 1
+  
   y_pred = model_0(image)
 
-  count = count + 1
-  max = 0
-  winner = 0
-  for i, logits in enumerate(y_pred[0]):
-     if max < logits:
-          max = logits
-          winner = i
-
   print ('\n\n')
-  print("WOO WOO the winner is:")    
-  print (winner)
+  print("WOO WOO the winner is:")
+  index = torch.argmax(y_pred[0])
+  print (index.item())
 
   plt.imshow(image.squeeze(), cmap="gray") # image shape is [1, 28, 28] (colour channels, height, width)
   plt.title(class_names[label]);
