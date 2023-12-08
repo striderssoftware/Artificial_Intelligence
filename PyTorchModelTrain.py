@@ -10,6 +10,8 @@ from torch import nn
 
 print ("strider was here")
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 # Define some functions
 def accuracy_fn(y_true, y_pred): 
     correct = torch.eq(y_true, y_pred).sum().item()
@@ -78,8 +80,6 @@ class MNISTModelV0(nn.Module):
         return self.layer_stack(x)
 
 # Get Dataset
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
 train_data = datasets.MNIST(root="data", train=True, download=True, transform=ToTensor())
 test_data = datasets.MNIST(root="data", train=False, download=True, transform=ToTensor())
 class_names = train_data.classes
