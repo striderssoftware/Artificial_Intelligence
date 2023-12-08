@@ -50,13 +50,9 @@ image, label = testData2[index]
 print ('\n\n')
 
 #  Results: Map results into solution space
-max =0
-winner = 0
-for i, logits in enumerate(output[0][0]):
-    if max < logits:
-        max = logits
-        winner = i
-    #print (logits)
+x = paddle.to_tensor(output)
+m = paddle.nn.Softmax()
+winner = paddle.argmax(m(x))
 
 plt.figure()
 plt.imshow(image)
