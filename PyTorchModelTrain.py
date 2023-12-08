@@ -116,7 +116,7 @@ for index, [image, label] in enumerate(test_data):
 
   print ('\n\n')
   print("WOO WOO the winner is:")
-  index = torch.argmax(y_pred[0])
+  index = torch.argmax(y_pred[0].softmax(0))
   print (index.item())
 
   plt.imshow(image.squeeze(), cmap="gray") # image shape is [1, 28, 28] (colour channels, height, width)
