@@ -12,7 +12,8 @@ Caffe: This may be a legacy API for machine learning
 MXNet: Apache API. this project has been retired: https://mxnet.apache.org/versions/1.9.1/api/python/docs/api/gluon/index.html  
 
 Atomatic Differentiation:  
-https://youtu.be/he_86Y4lQLw?si=sIQCbEmrctdi-L_W
+https://youtu.be/he_86Y4lQLw?si=sIQCbEmrctdi-L_W  
+https://youtu.be/wG_nF1awSSY?si=DojP0owgwKg5VwwV  
   
 DATASET:  
 creation, acquisition, labeling, structure  
