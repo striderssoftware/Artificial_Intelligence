@@ -10,6 +10,9 @@ Keras: Part of the TF API.  https://www.tensorflow.org/guide/keras
 PaddlePaddle: (??API) https://www.paddlepaddle.org.cn/  
 Caffe: This may be a legacy API for machine learning  
 MXNet: Apache API. this project has been retired: https://mxnet.apache.org/versions/1.9.1/api/python/docs/api/gluon/index.html  
+
+Atomatic Differentiation:
+https://youtu.be/he_86Y4lQLw?si=sIQCbEmrctdi-L_W
   
 DATASET:  
 creation, acquisition, labeling, structure  
