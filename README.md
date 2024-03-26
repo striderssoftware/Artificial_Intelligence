@@ -14,6 +14,9 @@ MXNet: Apache API. this project has been retired: https://mxnet.apache.org/versi
 AUTOMATIC DIFFERENTIATION:   
 https://youtu.be/he_86Y4lQLw?si=sIQCbEmrctdi-L_W  
 https://youtu.be/wG_nF1awSSY?si=DojP0owgwKg5VwwV  
+
+Machine Learning - Neural network Basics
+https://www.youtube.com/watch?v=A1DvpJhwSek
   
 DATASET:  
 creation, acquisition, labeling, structure  
