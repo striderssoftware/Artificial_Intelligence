@@ -7,6 +7,7 @@ from torch import nn
 from timeit import default_timer as timer
 from tqdm.auto import tqdm
 from torch import nn
+from matplotlib import pyplot as plt
 
 print ("strider was here")
 
